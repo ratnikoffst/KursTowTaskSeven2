@@ -1,0 +1,63 @@
+#fotoButton{
+-fx-background-color:transparent;
+}
+#sendButton {
+     -fx-background-color:transparent;
+}
+
+#listBox {
+     -fx-background-color:transparent;
+
+}
+
+#imageView {
+-fx-background-color:orange;
+}
+
+#messageList  {
+.content{
+
+-fx-text:white;
+}
+.text-area {
+    -fx-text-fill: white;
+     -fx-text-color:white;
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+.text-area .scroll-pane .content {
+    -fx-background-color: transparent;
+}
+.text-area .scroll-pane .viewport {
+
+-fx-background-color:transparent;
+-fx-color:transparent;
+-fx-background:transparent;
+}
+}
+
+#messegeEdit {
+ -fx-padding: 10;
+  -fx-text-fill:orange;
+  -fx-background-color:transparent;
+   -fx-border-color: blue;
+        -fx-border-radius: 5px 5px 5px 5px;
+        -fx-border-style: solid;
+        -fx-border-width: 3px 3px 3px 3px;
+}
+
+
+#hbox {
+ -fx-padding:10;
+}
+
+#messageItem .content {
+ -fx-border-color: blue;
+        -fx-border-radius: 5px 5px 5px 5px;
+        -fx-border-style: solid;
+        -fx-border-width: 3px 3px 3px 3px;
+        -fx-background-color:transparent;
+}

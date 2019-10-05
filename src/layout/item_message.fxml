@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import java.net.URL?>
+<HBox id="messageItem" alignment="BASELINE_LEFT"  xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Client.Controller">
+    <stylesheets>
+        <URL value="@/css/Styles.css"/>
+    </stylesheets>
+
+    <ImageView fx:id="imageView" fitHeight="80.0" fitWidth="5.0"  pickOnBounds="true"
+               preserveRatio="true"/>
+    <padding>
+        <Insets left="10.0" top="10.0"/>
+    </padding>
+</HBox>

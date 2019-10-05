@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+
+<VBox fx:id="vbox" alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Client.Controller">
+
+    <stylesheets>
+        <URL value="@/css/Styles.css"/>
+    </stylesheets>
+
+    <TextArea fx:id="messageList" editable="false" VBox.vgrow="ALWAYS"/>
+
+    <HBox fx:id="hbox" spacing="10" alignment="CENTER">
+        <Button fx:id="fotoButton" HBox.hgrow="ALWAYS" minWidth="48" minHeight="48"/>
+
+        <TextField fx:id="messegeEdit" HBox.hgrow="ALWAYS" onAction="#SendMsg" promptText="Сообщение"/>
+
+        <Button fx:id="sendButton" HBox.hgrow="ALWAYS" onAction="#SendMsg" minWidth="48" minHeight="48"/>
+
+    </HBox>
+</VBox>
