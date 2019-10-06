@@ -24,8 +24,6 @@ import java.net.URL;
 
 public class MyServer extends Application {
 
-    private Stage mainStage;
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Сервер:");
@@ -33,7 +31,6 @@ public class MyServer extends Application {
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(location.openStream());
         ControllerServer controllerServer = loader.getController();
-        //    Scene scene = new Scene(root, 960, 600);
         primaryStage.setScene(new Scene(root, 960, 600));
         primaryStage.show();
 

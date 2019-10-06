@@ -37,33 +37,38 @@ public class Controller implements Initializable {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    while (true) {
-
-                        String text ="";
+                    try {
+                        while (true) {
+                            String text = "";
+                            text = mRead.readUTF();
+                            messageList.appendText(text + "\n");
+                            System.out.println("Сообщение сервера " + text);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
                         try {
-
-                                text = mRead.readUTF();
-                                //  mRead.reset();
-                                messageList.appendText(text + "\n");
-
+                            mWrite.close();
                         } catch (IOException e) {
                             e.printStackTrace();
-                        } finally {
-                            try {
-                                socket.close();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                        }
+                        try {
+                            mRead.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            socket.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
                     }
                 }
-            }
-            ).start();
+            }).start();
         } catch (IOException e) {
             // Ошибка открытия сокета клиента
             e.printStackTrace();
         }
-
     }
 
     public void SendMsg() {
@@ -75,11 +80,12 @@ public class Controller implements Initializable {
     public void SendMsg(String text) {
 
         try {
+            messageList.appendText(text + "\n");
+            System.out.println(text);
             mWrite.writeUTF(text);
-            messageList.appendText( text+ "\n");
+
         } catch (IOException e) {
-            // В принципе можно сделать несколько попыток !
-            messageList.appendText( "Сообщение не прошло !"+ "\n");
+            messageList.appendText("Сообщение не прошло !" + "\n");
             System.out.println("Сообщение не отправлено !");
             e.printStackTrace();
         }
